@@ -197,7 +197,7 @@ def handle_comparison(client, assistant_id, vector_store_id, current_chat, compa
     # Create messages for the chatbot
     user_message = {"role": "user", "content": prompt, "id": str(uuid.uuid4())}
     current_chat["messages"].append(user_message)
-    st.chat_message("user", avatar="💡").markdown(f"**You:** {prompt}")
+    # st.chat_message("user", avatar="💡").markdown(f"**You:** {prompt}")
     
     with st.spinner('Finding comparable Maxlite products...'):
         assistant_response = chat_with_gpt(client, vector_store_id, assistant_id, current_chat["messages"])
