@@ -12,9 +12,9 @@ st.set_page_config(layout="wide")
 def load_environment_variables():
     """Load environment variables from the .env file."""
     load_dotenv()
-    api_key = os.getenv('OPENAI_API_KEY')
-    assistant_id = os.getenv('ASSISTANT_ID')
-    vector_store_id = os.getenv('VECTOR_STORE_ID')
+    api_key = st.secrets['OPENAI_API_KEY']
+    assistant_id = st.secrets['ASSISTANT_ID']
+    vector_store_id = st.secrets['VECTOR_STORE_ID']
     
     return api_key, assistant_id, vector_store_id
 
