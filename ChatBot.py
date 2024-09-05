@@ -159,7 +159,6 @@ def display_standard_chatbot(client, vector_store_id, assistant_id, current_chat
     # Clear chat button
     if st.button('🗑️ Clear Current Chat'):
         current_chat["messages"] = []
-        st.rerun(scope="fragment")
 
 def display_file_upload_chatbot(client, vector_store_id, assistant_id, current_chat):
     """Handle file upload and comparison functionality."""
@@ -181,12 +180,6 @@ def display_file_upload_chatbot(client, vector_store_id, assistant_id, current_c
             comparison_input = selected_row.to_dict()
             handle_comparison(client, assistant_id, vector_store_id, current_chat, comparison_input)
 
-    # Clear chat button
-    if st.button('🗑️ Clear Current Chat'):
-        df = None
-        current_chat["messages"] = []
-        st.rerun(scope="fragment")
-
 def display_specs_comparison_chatbot(client, vector_store_id, assistant_id, current_chat):
     """Handle product specification input and comparison functionality."""
     specs_input = st.text_area("Enter product specifications")
@@ -194,11 +187,6 @@ def display_specs_comparison_chatbot(client, vector_store_id, assistant_id, curr
 
     if st.button("🔍 Find a comparable product from Maxlite's offerings"):
         handle_comparison(client, assistant_id, vector_store_id, current_chat, specs_input)
-
-    # Clear chat button
-    if st.button('🗑️ Clear Current Chat'):
-        current_chat["messages"] = []
-        st.rerun(scope="fragment")
 
 
 def handle_comparison(client, assistant_id, vector_store_id, current_chat, comparison_input):
