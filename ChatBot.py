@@ -146,7 +146,7 @@ def display_standard_chatbot(client, vector_store_id, assistant_id, current_chat
         st.chat_message("user", avatar="💡").markdown(f"**You:** {prompt}")
         
         # Handle the assistant's response
-        with st.spinner('💬 Generating response...'):
+        with st.spinner('Generating response...'):
             assistant_response = chat_with_gpt(client, vector_store_id, assistant_id, current_chat["messages"])
 
         if assistant_response:
