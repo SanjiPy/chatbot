@@ -111,7 +111,7 @@ def display_chat_interface(client, vector_store_id, assistant_id):
         # Display the chat history for the current chat with icons like ChatGPT
         for msg in current_chat["messages"]:
             if msg["role"] == "user":
-                st.chat_message("user", avatar="🧑").markdown(f"**You:** {msg['content']}")
+                st.chat_message("user", avatar="💡").markdown(f"**You:** {msg['content']}")
             elif msg["role"] == "assistant":
                 st.chat_message("assistant", avatar="🤖").markdown(f"**Assistant:** {msg['content']}")
 
